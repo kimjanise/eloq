@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
+import { ProsodyWidgets } from '../src/components/widgets';
 
 function App() {
   const [recordings, setRecordings] = useState([]);
