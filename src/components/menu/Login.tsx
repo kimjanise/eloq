@@ -1,6 +1,6 @@
-import { Button } from "../inputs/Button";
-import { TextBox } from "../inputs/TextBox";
-import { useKeypress } from "../../lib/hooks/keyPress";
+import { Button } from "../inputs/Button.tsx";
+import { TextBox } from "../inputs/TextBox.tsx";
+import { useKeypress } from "../../lib/hooks/keyPress.ts";
 import { useState } from "react";
 import React from "react";
 

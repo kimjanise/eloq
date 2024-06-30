@@ -1,4 +1,4 @@
-import { sleep } from "../utilities/asyncUtilities";
+import { sleep } from "../utilities/asyncUtilities.ts";
 
 export class AudioRecorder {
   private recorder;

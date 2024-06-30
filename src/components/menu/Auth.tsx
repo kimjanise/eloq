@@ -1,8 +1,8 @@
-import { Environment, parseEnvironment } from "../../lib/utilities/environmentUtilities";
+import { Environment, parseEnvironment } from "../../lib/utilities/environmentUtilities.ts";
 import { createContext, useEffect, useState } from "react";
 
-import { Login } from "./Login";
-import { useStorage } from "../../lib/hooks/storage";
+import { Login } from "./Login.tsx";
+import { useStorage } from "../../lib/hooks/storage.ts";
 import React from "react";
 
 type ChildElement = JSX.Element | string;

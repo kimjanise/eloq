@@ -1,5 +1,5 @@
 import React from "react";
-import { AudioWidgets } from "./AudioWidgets";
+import { AudioWidgets } from "./AudioWidgets.tsx";
 
 export function ProsodyWidgets() {
   return (

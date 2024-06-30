@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "../../lib/utilities/styleUtilities";
+import { cn } from "../../lib/utilities/styleUtilities.ts";
 import { cva } from "class-variance-authority";
 
 type ButtonProps = React.HTMLAttributes<HTMLDivElement> & {

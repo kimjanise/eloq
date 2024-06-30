@@ -1,13 +1,13 @@
-import { None, Optional } from "../../lib/utilities/typeUtilities";
+import { None, Optional } from "../../lib/utilities/typeUtilities.ts";
 import { useContext, useEffect, useRef, useState } from "react";
 
 import { AudioPrediction } from "../../lib/data/audioPrediction";
-import { AudioRecorder } from "../../lib/media/audioRecorder";
-import { AuthContext } from "../menu/Auth";
-import { DiscreteTimeline } from "./DiscreteTimeline";
-import { TopEmotions } from "./TopEmotions";
-import { blobToBase64 } from "../../lib/utilities/blobUtilities";
-import { getApiUrlWs } from "../../lib/utilities/environmentUtilities";
+import { AudioRecorder } from "../../lib/media/audioRecorder.ts";
+import { AuthContext } from "../menu/Auth.tsx";
+import { DiscreteTimeline } from "./DiscreteTimeline.tsx";
+import { TopEmotions } from "./TopEmotions.tsx";
+import { blobToBase64 } from "../../lib/utilities/blobUtilities.ts";
+import { getApiUrlWs } from "../../lib/utilities/environmentUtilities.ts";
 import React from "react";
 
 interface AudioWidgetsProps {
