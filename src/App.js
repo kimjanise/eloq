@@ -81,24 +81,44 @@ function App() {
       <header className="App-header">
         <h1>eloq.</h1>
         <button onClick={isRecording ? stopRecording : startRecording}>
-          {isRecording ? 'Stop Recording' : 'Start Recording'}
+          {isRecording ? 'stop session' : 'start session'}
         </button>
-        {isRecording && <p>Live WPM: {liveWPM}</p>}
+        {isRecording && (
+          <>
+            <p>live wpm: {liveWPM}</p>
+            <div>
+              <ProsodyWidgets />
+            </div>
+          </>
+        )}
         <div>
           <h3>history</h3>
           <ul>
             {recordings.map((recording, index) => (
               <li key={index}>
                 <audio controls src={recording.url}></audio>
-                <p>{recording.date} - Average WPM: {recording.avgWPM}</p>
+                <p>{recording.date} - average wpm: {recording.avgWPM}</p>
               </li>
             ))}
           </ul>
-          <button onClick={clearRecordings}>clear</button>
+          <button onClick={clearRecordings}>clear all</button>
         </div>
       </header>
     </div>
   );
+  
 }
 
 export default App;
+
+// import { ProsodyWidgets } from './components/widgets/ProsodyWidgets.tsx';
+
+//  function App() {
+//   return (
+//     <div className="px-6 pt-10 pb-20 sm:px-10 md:px-14">
+//       <ProsodyWidgets />
+//     </div>
+//   );
+// }
+
+// export default App;
