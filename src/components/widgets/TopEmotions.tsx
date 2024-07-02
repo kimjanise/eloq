@@ -1,5 +1,9 @@
 import React from "react";
 import { Emotion } from "../../lib/data/emotion";
+import { Pie } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 type TopEmotionsProps = {
   className?: string;
@@ -10,28 +14,43 @@ type TopEmotionsProps = {
 export function TopEmotions({ className, emotions, numEmotions }: TopEmotionsProps) {
   className = className || "";
 
+  const sortedEmotions = emotions
+    .sort((a: Emotion, b: Emotion) => b.score - a.score)
+    .slice(0, numEmotions);
+
+  const data = {
+    labels: sortedEmotions.map(emotion => emotion.name),
+    datasets: [
+      {
+        label: 'Top Emotions',
+        data: sortedEmotions.map(emotion => emotion.score),
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
   return (
     <div className={`${className}`}>
-      {emotions
-        .sort((a: Emotion, b: Emotion) => b.score - a.score)
-        .slice(0, numEmotions)
-        .map((emotion, i) => (
-          <div key={i} className="mb-3 flex rounded-full border border-neutral-200 text-sm shadow">
-            <div className="flex w-10 justify-center rounded-l-full bg-white py-2 pl-5 pr-4 font-medium text-neutral-800">
-              <span>{i + 1}</span>
-            </div>
-            <div className="w-48 bg-neutral-800 px-4 py-2 lowercase text-white">
-              <span>{emotion.name}</span>
-            </div>
-            <div className="flex w-20 justify-center rounded-r-full bg-white py-2 pr-4 pl-3 font-medium text-neutral-800">
-              <span>{emotion.score.toFixed(3)}</span>
-            </div>
-          </div>
-        ))}
+      <Pie data={data} />
     </div>
   );
 }
 
 TopEmotions.defaultProps = {
-  numEmotions: 3,
+  numEmotions: 5,
 };
+
