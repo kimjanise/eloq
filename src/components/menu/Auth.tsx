@@ -8,7 +8,7 @@ import React from "react";
 type ChildElement = JSX.Element | string;
 
 const AuthContext = createContext<AuthState>({
-  key: '',
+  key: 'Cau6cjuYtNZyALGZoNRQu19g2XXGPYckEDzenwttmu6MODAE',
   environment: Environment.Prod,
   unauthenticate: () => {},
   setEnvironment: (environment: Environment) => {},
