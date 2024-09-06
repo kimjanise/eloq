@@ -1,6 +1,6 @@
 # <img width="152" alt="Screenshot 2024-08-11 at 7 35 54 PM" src="https://github.com/user-attachments/assets/d5636c62-82dd-46be-a281-f75cb64d5efd">
 
-Eloq is an ai-powered app that helps you practice your public speaking skills.
+Eloq is an ai-powered web app that helps you practice your public speaking skills.
 
 ## Getting Started
 
